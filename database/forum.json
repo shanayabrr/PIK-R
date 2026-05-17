@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "username": "akramy",
+        "content": "🌟 PENGUMUMAN VOLUNTEER TERPILIH IYMPACK MENGAJAR VOL.1 🌟\r\n\r\nYeay! Saat yang ditunggu-tunggu akhirnya tiba! 🎉✨\r\nSelamat untuk teman-teman yang berhasil lolos dan resmi menjadi bagian dari Volunteer Iympack Mengajar! 💚 \r\nBerikut nama-namanya:\r\n\r\n1. Violin Azzahra\r\n2. Sabila Azzahra\r\n3. Nazira Harviana\r\n4. Al Khairin Wianaya\r\n5. Feby Putri\r\n6. Siti Salwa S\r\n7. Sasya Aqilah Aulia P\r\n8. Hafsah Izzati\r\n9. Laura Salsa A\r\n10. Cagiva Stella Azzahra\r\n11. Delia Novitasari\r\n12. Aika Novelisa Andhini\r\n13. Putri Lestari\r\n14. Natasya Arazak\r\n15. Hana Khoerunnisa\r\n\r\nTerima kasih untuk semua yang sudah daftar dan menunjukkan semangat luar biasa! 🤍\r\nBuat yang belum berkesempatan kali ini, jangan sedih ya, masih banyak kesempatan seru di event berikutnya! Stay tuned, karena perjalanan kita belum selesai! 🚀✨\r\n\r\nUntuk para volunteer terpilih, segera hubungi contact person di bawah ini untuk informasi selanjutnya 👇\r\n📲 0881-6160-136 (Salwa)\r\n📲 0856-1762-729 (Olivia)",
+        "role": "konselor",
+        "is_announcement": true,
+        "date": "2026-05-16 00:07"
+    },
+    {
+        "id": 2,
+        "username": "akramy",
+        "content": "selamat yaa, di tunggu respon dan kehadiran nya semua. see u soon!",
+        "role": "konselor",
+        "is_announcement": false,
+        "date": "2026-05-16 00:08"
+    },
+    {
+        "id": 3,
+        "username": "violin azzahra",
+        "content": "terimakasih info nya kaa, see u",
+        "role": "anggota_remaja",
+        "is_announcement": false,
+        "date": "2026-05-16 00:09"
+    },
+    {
+        "id": 4,
+        "username": "shanayabrr",
+        "content": "@violin azzahra sampai jumpa di jam 8 yaa",
+        "role": "konselor",
+        "is_announcement": false,
+        "date": "2026-05-17 07:40"
+    },
+    {
+        "id": 5,
+        "username": "violin azzahra",
+        "content": "@shanayabrr baik ka",
+        "role": "anggota_remaja",
+        "is_announcement": false,
+        "date": "2026-05-17 07:40"
+    }
+]

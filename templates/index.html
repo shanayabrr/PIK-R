@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="relative overflow-hidden pt-16 pb-24">
+    {# Decorative Elements #}
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-pink-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-indigo-50 rounded-full blur-3xl opacity-60"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 text-center lg:text-left">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-in">
+                <div class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8 shadow-sm">
+                    <span class="flex h-2 w-2 rounded-full bg-pink-600 animate-pulse"></span>
+                    Edisi Digital 2024
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black text-slate-800 tracking-tighter leading-[0.9] mb-8">
+                    PIK-R <span class="text-pink-600">PORTAL</span><br>
+                    <span class="text-slate-400">SAHABAT REMAJA.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mb-12">
+                    Wadah aman untuk berbagi cerita, konseling sebaya, dan mendapatkan informasi kesehatan remaja yang akurat secara anonim.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    {% if not session.get('user_id') %}
+                        <a href="{{ url_for('login') }}" class="btn-premium text-white px-10 py-5 rounded-3xl font-black text-sm tracking-widest uppercase shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3">
+                            MULAI SEKARANG &rarr;
+                        </a>
+                        <a href="{{ url_for('register') }}" class="bg-white text-slate-800 px-10 py-5 rounded-3xl font-black text-sm tracking-widest uppercase shadow-xl hover:bg-slate-50 transition-colors border border-slate-100 flex items-center justify-center">
+                            DAFTAR AKUN
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('dashboard') }}" class="btn-premium text-white px-10 py-5 rounded-3xl font-black text-sm tracking-widest uppercase shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-3">
+                            BUKA DASHBOARD &rarr;
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="relative hidden lg:block fade-in" style="animation-delay: 0.2s;">
+                <div class="premium-card p-10 rounded-[3rem] shadow-3xl bg-white/40 border-white/60 relative overflow-hidden group">
+                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-pink-100 rounded-full opacity-40 group-hover:scale-150 transition-transform duration-1000"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-16 h-16 bg-slate-800 rounded-3xl flex items-center justify-center text-3xl shadow-xl">👋</div>
+                            <div>
+                                <h4 class="text-2xl font-black text-slate-800 tracking-tight">Halo, Remaja!</h4>
+                                <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Siap untuk cerita hari ini?</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white/80 p-5 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Aktivitas Terakhir</p>
+                                <p class="text-sm font-bold text-slate-800">12+ Sesi Konseling Berlangsung Hari Ini</p>
+                            </div>
+                            <div class="bg-white/80 p-5 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Edukasi Populer</p>
+                                <p class="text-sm font-bold text-slate-800">Menjaga Kesehatan Mental di Sekolah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-6 py-24">
+    <div class="text-center mb-20">
+        <h2 class="text-4xl font-black text-slate-800 tracking-tighter mb-4">Layanan Utama Kami</h2>
+        <p class="text-slate-400 font-bold uppercase tracking-[0.3em] text-xs">Akses semua fitur dalam satu genggaman</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="premium-card p-10 rounded-[2.5rem] group hover:bg-slate-900 transition-all duration-500">
+            <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">💬</div>
+            <h3 class="text-2xl font-black mb-4 group-hover:text-white tracking-tight transition-colors">Konseling Sebaya</h3>
+            <p class="text-slate-500 group-hover:text-slate-400 leading-relaxed transition-colors">
+                Layanan chat daring yang terjaga kerahasiaannya dengan konselor sebaya terlatih.
+            </p>
+        </div>
+        <div class="premium-card p-10 rounded-[2.5rem] group hover:bg-slate-900 transition-all duration-500">
+            <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">📚</div>
+            <h3 class="text-2xl font-black mb-4 group-hover:text-white tracking-tight transition-colors">Portal Edukasi</h3>
+            <p class="text-slate-500 group-hover:text-slate-400 leading-relaxed transition-colors">
+                Akses materi kesehatan mental, reproduksi, dan perencanaan masa depan yang tervalidasi.
+            </p>
+        </div>
+        <div class="premium-card p-10 rounded-[2.5rem] group hover:bg-slate-900 transition-all duration-500">
+            <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">📢</div>
+            <h3 class="text-2xl font-black mb-4 group-hover:text-white tracking-tight transition-colors">Forum Diskusi</h3>
+            <p class="text-slate-500 group-hover:text-slate-400 leading-relaxed transition-colors">
+                Ruang interaksi anonim untuk saling menguatkan dan berbagi pengalaman antar remaja.
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="py-24 bg-slate-900 text-white rounded-[4rem] mx-4 mb-24 overflow-hidden relative">
+    <div class="absolute -right-40 -top-40 w-96 h-96 bg-pink-600 rounded-full blur-[100px] opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-10 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-black tracking-tighter mb-8 leading-tight">
+                    Kenapa Harus Konsultasi<br>di <span class="text-pink-500">PIK-R Digital?</span>
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">🔒</div>
+                        <div>
+                            <h4 class="text-xl font-black mb-2 tracking-tight">Privasi Terjamin</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Semua sesi bersifat rahasia dan terjaga dalam sistem yang aman.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">🤝</div>
+                        <div>
+                            <h4 class="text-xl font-black mb-2 tracking-tight">Konselor Terlatih</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Konselor kami telah menempuh sertifikasi resmi untuk menangani permasalahan remaja.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">⚡</div>
+                        <div>
+                            <h4 class="text-xl font-black mb-2 tracking-tight">Akses Cepat</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Sistem penjadwalan otomatis memudahkanmu tanpa perlu menunggu lama.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="premium-card p-10 rounded-[3rem] bg-white text-slate-800 shadow-2xl">
+                    <h4 class="text-2xl font-black mb-6 tracking-tight">Testimoni Sahabat</h4>
+                    <div class="space-y-6">
+                        <p class="text-lg font-medium italic text-slate-500">"Sangat terbantu dengan adanya portal ini. Bisa cerita apa saja tanpa takut di-judge."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-black uppercase">R</div>
+                            <div>
+                                <p class="font-black text-sm">Remaja Anonim</p>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Siswa SMA Tazkia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,412 @@
+[
+    {
+        "id": 1,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Kak Shanaya, selamat siang. Saya sedang butuh bantuan segera. Saya tidak tahu harus menghubungi siapa lagi.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:22",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 2,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Selamat siang, Vio. Terima kasih sudah menghubungi PIK-R. Saya Shanaya. Silakan sampaikan apa yang sedang kamu hadapi. Di sini kamu berada di ruang yang aman dan rahasia.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:24",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 3,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Saya menjadi korban perundungan di media sosial oleh teman-teman sekolah. Mereka menyebarkan foto pribadi saya tanpa izin dan memberikan komentar-komentar yang sangat menyudutkan. Sekarang saya merasa sangat cemas, gemetar, dan tidak berani keluar rumah, apalagi ke sekolah.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:24",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 4,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Vio, pertama-tama saya ingin kamu tahu bahwa tindakan perundungan yang mereka lakukan sama sekali tidak bisa dibenarkan. Ini bukan kesalahan kamu. Saat ini, apakah kamu sedang berada di tempat yang aman? Jika situasinya membuatmu sangat sesak, mari ambil napas dalam-dalam terlebih dahulu. Saya akan menemani kamu di sini.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:25",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 5,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Iya Kak, saya di kamar sekarang. Tapi pikiran saya tidak bisa tenang karena ponsel saya terus-menerus menerima notifikasi negatif. Saya merasa sangat tertekan dan sendirian menghadapi ini.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:26",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 6,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Langkah pertama yang bisa kita lakukan sekarang untuk melindungi diri kamu adalah mematikan notifikasi media sosial tersebut, atau jika perlu, nonaktifkan akunmu untuk sementara waktu. Kamu berhak menjauhkan diri dari lingkungan digital yang tidak sehat itu demi ketenangan pikiranmu. Apakah kamu bisa melakukannya sekarang?",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:26",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 7,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Baik Kak, aplikasinya sudah saya hapus sementara dari ponsel. Rasanya sedikit berkurang tekanan instannya. Tapi saya tetap cemas memikirkan hari esok di sekolah. Bagaimana saya harus menghadapinya?",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:26",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 8,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Itu keputusan yang sangat baik, Vio. Terkait hari esok, kamu tidak perlu memaksakan diri jika kondisi mentalmu belum siap. Jika kamu merasa cemas secara berlebihan hingga mengganggu fisikmu, tidak apa-apa untuk meminta izin tidak masuk sekolah selama satu atau dua hari ini demi memulihkan diri. Apakah orang tuamu sudah mengetahui masalah ini?",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:27",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 9,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Belum Kak, saya takut membuat mereka kecewa atau cemas berlebihan. Selama ini saya selalu berusaha menyelesaikan masalah sendiri, tapi kali ini saya benar-benar tidak sanggup.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:28",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 10,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Menghadapi perundungan sendirian memang sangat berat, Vio, dan mencari bantuan adalah tindakan yang sangat tepat. Orang tua justru akan lebih sedih jika tahu kamu menghadapi tekanan seberat ini tanpa dukungan mereka. Jika kamu bingung bagaimana cara menyampaikannya, kita bisa diskusikan bersama di sini kalimat yang tepat untuk berbicara dengan orang tuamu. Bagaimana menurutmu?",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:28",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 11,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Baik Kak Shanaya, saya rasa saya butuh bantuan untuk menyusun kata-katanya agar orang tua saya tidak panik. Terima kasih banyak sudah mendengarkan dan mengarahkan saya.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:29",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 12,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Sama-sama, Vio. Kamu tidak sendirian menghadapi situasi ini. Mari kita susun bersama pesan atau kalimat yang bisa kamu sampaikan ke orang tua terlebih dahulu. Silakan ambil waktu sejenak, saya tetap stand-by di sini untuk membantu kamu.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:29",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 13,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Kak Shanaya... Sebentar. Ini tiba-tiba grup angkatan di WA ramai sekali. Ada yang menyebarkan nomor telepon saya di sana.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:40",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 14,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Kak, ponsel saya tidak berhenti bergetar. Banyak sekali nomor tidak dikenal masuk ke chat pribadi (PC). Isinya foto-foto editan saya tadi, mereka memaki-maki saya langsung ke nomor pribadi. Saya takut sekali, Kak. Rumah saya sepi.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:41",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 15,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Vio, letakkan ponselmu sekarang juga. Jangan baca satu pesan pun yang masuk dari nomor asing itu. Tarik napas dulu. Tolong kunci pintu kamarmu dan tetap di tempat yang aman. Saya masih di sini.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:41",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 16,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Kak... Tolong. Saya benar-benar tidak kuat lagi sekarang. Dada saya mendadak sesak sekali, rasanya seperti tercekik. Jantung saya berdebar sangat kencang sampai kepala saya pusing, tangan saya gemetar hebat sampai susah memegang ponsel.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:42",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 17,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Vio, tetap di halaman chat ini, jangan ditutup. Gejala fisik yang kamu rasakan adalah reaksi tubuh karena kecemasanmu sudah melewati batas (serangan panik akut). Kondisi ini harus segera ditangani secara medis. Tolong telepon Ibu atau Ayah sekarang juga lewat panggilan biasa, pasang loudspeaker, dan minta mereka pulang saat ini juga. Apakah kamu bisa melakukannya?",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:43",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 18,
+        "sender": "violin azzahra",
+        "receiver": "shanaya balghis",
+        "message": "Saya tidak bisa berbicara, Kak... Napas saya pendek-pendek sekali. Mengetik ini saja tangan saya kaku.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:44",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 19,
+        "sender": "klinik",
+        "receiver": "violin azzahra",
+        "message": "Selamat siang, Vio. Saya dr. Dian dari Tim Medis Darurat Klinik Medika. Kami baru saja menerima pengalihan data krisis dari sistem PIK-R karena indikasi serangan panik berat dan sesak napas. Tetap di halaman chat ini, kami sekarang mengambil alih penanganan. Apakah Anda bisa membaca pesan ini? Balas karakter apa saja untuk konfirmasi.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:45",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 20,
+        "sender": "violin azzahra",
+        "receiver": "klinik",
+        "message": "Ya",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:46",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 21,
+        "sender": "klinik",
+        "receiver": "violin azzahra",
+        "message": "Bagus, Vio. Terima kasih respon cepatnya. Detak jantungmu yang berdebar kencang dan tangan kaku itu adalah respons fisik normal saat tubuh mengalami syok emosional, jadi kamu tidak perlu makin panik. Kamu aman bersama kami sekarang.  Apakah saat ini kamu benar-benar sendirian di rumah? Tolong ketik \"Ya\" atau \"Tidak\".",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:46",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 22,
+        "sender": "violin azzahra",
+        "receiver": "klinik",
+        "message": "Ya",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:46",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 23,
+        "sender": "klinik",
+        "receiver": "violin azzahra",
+        "message": "Baik. Sesuai data GPS dan registrasi integrasi sistem, posisi kamu saat ini terdeteksi di Jalan Kehutanan No. 40. Kami sudah mengonfirmasi alamat ini dan tim ambulans Klinik Medika sekarang sedang bergerak ke lokasi rumahmu. Estimasi tiba dalam 10 menit.  Sembari ambulans jalan, tolong ikuti instruksi medis saya untuk mengendurkan tanganmu yang kaku dan melonggarkan napas:  Singkirkan bantal, rebahkan badanmu telentang di lantai atau kasur tanpa ditekuk.  Tiup napas lewat mulut sampai habis, lalu tarik napas perlahan lewat hidung dalam hitungan 1... 2... 3... 4...  Tahan napas sebentar, lalu tiup lagi lewat mulut perlahan seperti sedang meniup sedotan dalam hitungan 1... 2... 3... 4...  Coba lakukan sekarang, Vio. Fokus hanya pada hitungan napasmu, abaikan ponselmu yang bergetar.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:47",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 24,
+        "sender": "violin azzahra",
+        "receiver": "klinik",
+        "message": "Sdah dok... ssk sdkt brkrg tpi kpla pusing bgt jaln jg lms.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:48",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 25,
+        "sender": "klinik",
+        "receiver": "violin azzahra",
+        "message": "Pintar, teruskan polanya secara lambat. Pusing dan lemas itu normal karena kadar karbondioksida di tubuhmu sedang tidak seimbang akibat napas pendek tadi. Itu akan membaik dalam beberapa menit.  Vio, satu hal penting sebelum ambulans kami tiba: Apakah pintu utama rumahmu saat ini dalam keadaan terkunci? Jika iya, apakah kamu bisa merangkak atau berjalan perlahan untuk membuka kunci pintunya sekarang? Supaya tim medis kami bisa langsung masuk saat tiba di depan rumah.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:48",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 26,
+        "sender": "violin azzahra",
+        "receiver": "klinik",
+        "message": "Udh dbuka dok. Skrg ak bsrndar dkt pntu dpn. Gak kuat blk ke kmr.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:49",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 27,
+        "sender": "klinik",
+        "receiver": "violin azzahra",
+        "message": "Tindakan yang sangat tepat dan luar biasa, Vio. Kamu aman bersandar di sana. Tim paramedis kami baru saja mengonfirmasi bahwa ambulans sudah memasuki gang rumahmu dan akan sampai dalam kurun waktu kurang dari 2 menit lagi.  Tetap pejamkan matamu, teruskan napas lambat yang tadi, dan jangan tutup ruang chat ini sampai petugas kami mengetuk pintumu secara langsung. Kami bersamamu sampai akhir.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:49",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 28,
+        "sender": "violin azzahra",
+        "receiver": "klinik",
+        "message": "Iya dok ada suara sirine di depan. Ada yang ngetok pintu.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:49",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 29,
+        "sender": "klinik",
+        "receiver": "violin azzahra",
+        "message": "Benar, itu adalah tim medis kami, Vio. Silakan biarkan mereka masuk dan memberikan pemeriksaan langsung untukmu. Chat ini saya tandai sebagai 'Dalam Penanganan Lapangan'. Fokus pada pemulihan fisikmu bersama tim kami ya. Semoga lekas membaik.",
+        "attachment": null,
+        "timestamp": "2026-05-17 08:50",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 30,
+        "sender": "shanaya balghis",
+        "receiver": "violin azzahra",
+        "message": "Sesi ini telah dirujuk ke Klinik Kesehatan oleh Konselor. violin azzahra, silakan hubungi akun 'klinik' untuk penanganan medis lebih lanjut.",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:00",
+        "seen": false,
+        "is_bot": true
+    },
+    {
+        "id": 31,
+        "sender": "virgie shandy",
+        "receiver": "shanayabrr",
+        "message": "Selamat siang, Kak Shanaya. Maaf mengganggu waktunya. Saya Virgie, mahasiswi Informatika. Boleh saya berkonsultasi sebentar mengenai kesehatan mental?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:08",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 32,
+        "sender": "shanayabrr",
+        "receiver": "virgie shandy",
+        "message": "Selamat siang, Virgie. Sama sekali tidak mengganggu kok. Tentu saja boleh, pintu konseling selalu terbuka untuk siapa saja. Bagaimana kabarmu hari ini, dan apa yang sedang ingin kamu diskusikan tentang kesehatan mental?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:08",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 33,
+        "sender": "virgie shandy",
+        "receiver": "shanayabrr",
+        "message": "Kabar saya sebenarnya sedang kurang baik secara emosional, Kak. Akhir-akhir ini saya merasa sangat kewalahan dengan tekanan perkuliahan ditambah beberapa tanggung jawab di organisasi. Rasanya energi saya habis total, mudah cemas, dan fokus saya menurun drastis. Saya jadi mulai mempertanyakan, apakah ini tanda-tanda gangguan kesehatan mental yang serius atau hanya sekadar lelah biasa?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:09",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 34,
+        "sender": "shanayabrr",
+        "receiver": "virgie shandy",
+        "message": "Terima kasih ya, Virgie, sudah berani menyadari dan mengungkapkan apa yang kamu rasakan. Rasa kewalahan, cemas, dan kehilangan fokus akibat tekanan yang bertumpuk itu adalah respons yang sangat valid.  Dalam kesehatan mental, ada batasan antara \"lelah biasa\" (fatigue) dan kondisi yang lebih mendalam seperti burnout atau kecemasan. Batasannya biasanya terlihat dari durasi dan dampaknya ke fungsi sehari-hari. Apakah kondisi ini sudah berlangsung lama dan sampai mengganggu tidur atau makanmu?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:09",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 35,
+        "sender": "virgie shandy",
+        "receiver": "shanayabrr",
+        "message": "Sudah sekitar tiga minggu ini, Kak. Tidur saya jadi tidak teratur dan sering terbangun di malam hari karena memikirkan tugas. Saya juga mulai menarik diri dari teman-teman karena merasa tidak punya energi untuk bersosialisasi. Saya merasa bersalah karena mengabaikan tanggung jawab, tapi di sisi lain tubuh saya rasanya menolak untuk bergerak.",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:09",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 36,
+        "sender": "shanayabrr",
+        "receiver": "virgie shandy",
+        "message": "Tiga minggu dengan gejala yang menetap dan sudah mulai memengaruhi pola tidur serta interaksi sosial itu berarti sinyal dari tubuhmu sudah cukup kuat, Virgie. Tubuh dan pikiranmu sedang memberikan alarm bahwa kapasitasmu sudah melebihi batasnya (overload).  Menjaga kesehatan mental di tengah padatnya dunia perkuliahan memang tantangan besar. Langkah awal yang paling penting sekarang bukanlah memaksa dirimu untuk langsung produktif lagi, melainkan memberi ruang untuk self-care dan regulasi emosi. Apakah selama ini kamu punya waktu khusus untuk benar-benar beristirahat tanpa memikirkan tugas atau organisasi?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:10",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 37,
+        "sender": "virgie shandy",
+        "receiver": "shanayabrr",
+        "message": "Jujur tidak ada, Kak. Setiap kali saya mencoba tidak melakukan apa-apa, rasa bersalahnya justru makin besar karena merasa membuang-buang waktu. Pikiran saya selalu menuntut untuk terus berjalan. Bagaimana ya Kak cara mengatasi rasa bersalah itu agar mental saya bisa benar-benar istirahat?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:10",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 38,
+        "sender": "shanayabrr",
+        "receiver": "virgie shandy",
+        "message": "Rasa bersalah saat beristirahat itu sangat sering terjadi, terutama pada orang yang terbiasa aktif. Cara mengubah sudut pandangnya adalah dengan menanamkan pemikiran bahwa istirahat bukanlah hadiah setelah kita selesai bekerja, melainkan bagian dari fondasi kerja itu sendiri. Sama seperti komputer, jika dipaksa menyala terus untuk komputasi berat tanpa henti, sistemnya akan crash.  Mari kita mulai dari hal kecil yang bisa kamu kendalikan hari ini. Bagaimana jika malam ini kamu menetapkan batasan tegas? Misalnya, di atas jam 9 malam, matikan semua notifikasi kuliah dan organisasi, lalu fokus pada kegiatan yang membuatmu rileks. Apakah kamu bersedia mencobanya?",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:11",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 39,
+        "sender": "virgie shandy",
+        "receiver": "shanayabrr",
+        "message": "Penjelasan Kakak masuk akal sekali. Saya terlalu memperlakukan diri saya seperti mesin. Baik Kak, saya akan coba batasan jam 9 malam itu mulai hari ini untuk mengembalikan jam tidur saya dulu.",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:11",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 40,
+        "sender": "shanayabrr",
+        "receiver": "virgie shandy",
+        "message": "Bagus sekali, Virgie. Itu adalah langkah awal yang sangat protektif untuk kesehatan mentalmu. Ingat, mengakui bahwa kita lelah dan butuh bantuan bukan tanda kelemahan, melainkan bentuk kekuatan karena kamu mengenali dirimu sendiri.  Proses pemulihan ini butuh waktu, jadi berjalanlah pelan-pelan. Ruang chat ini akan selalu terbuka kalau kamu butuh berdiskusi lagi atau mengevaluasi perkembanganmu. Tetap semangat ya, kamu sudah melakukan yang terbaik.",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:11",
+        "seen": false,
+        "is_bot": false
+    },
+    {
+        "id": 41,
+        "sender": "virgie shandy",
+        "receiver": "shanayabrr",
+        "message": "❤️❤️❤️",
+        "attachment": null,
+        "timestamp": "2026-05-17 09:12",
+        "seen": false,
+        "is_bot": false
+    }
+]

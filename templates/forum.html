@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+            <h2 class="text-4xl font-black text-slate-800 tracking-tighter">Forum & Pengumuman</h2>
+            <p class="text-slate-500 mt-2 font-medium">Ruang berbagi cerita dan informasi resmi PIK-R Tazkia.</p>
+        </div>
+        <div class="flex gap-2">
+            <span class="bg-pink-100 text-pink-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">#Community</span>
+            <span class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">#Support</span>
+        </div>
+    </div>
+
+    {# FORM POSTINGAN PREMIUM #}
+    <div class="premium-card p-6 rounded-3xl mb-10">
+        <form action="{{ url_for('forum') }}" method="POST" class="space-y-4">
+            <div class="relative group">
+                <label class="block text-[10px] font-black text-pink-600 mb-2 uppercase tracking-[0.2em]">Tulis Pesan Baru</label>
+                <textarea name="content" required rows="4"
+                    class="w-full p-4 bg-slate-50/50 border border-slate-200 rounded-2xl text-sm outline-none focus:ring-2 focus:ring-pink-500 focus:bg-white transition-all leading-relaxed placeholder:text-slate-400"
+                    placeholder="Bagikan ceritamu atau buat pengumuman di sini..."></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                {% if session['role'] in ['admin_pikr', 'konselor'] %}
+                <label class="inline-flex items-center group cursor-pointer">
+                    <div class="relative flex items-center">
+                        <input type="checkbox" name="is_announcement" class="peer sr-only">
+                        <div class="w-10 h-6 bg-slate-200 rounded-full peer-checked:bg-pink-600 transition-colors"></div>
+                        <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full peer-checked:translate-x-4 transition-transform shadow-sm"></div>
+                    </div>
+                    <span class="ml-3 text-xs font-bold text-slate-600 group-hover:text-pink-600 transition-colors">Tandai Sebagai Pengumuman Resmi 📢</span>
+                </label>
+                {% else %}
+                <div></div>
+                {% endif %}
+
+                <button type="submit" class="btn-premium text-white px-8 py-3 rounded-2xl font-bold text-sm shadow-xl">
+                    Kirim Postingan &rarr;
+                </button>
+            </div>
+        </form>
+    </div>
+
+    {# DAFTAR TIMELINE POSTINGAN #}
+    <div class="grid grid-cols-1 gap-6">
+        {% for post in posts %}
+        {% if post.is_announcement %}
+        <div class="premium-card p-8 rounded-3xl border-2 border-pink-200 relative group overflow-hidden bg-gradient-to-br from-white to-pink-50/30">
+            <div class="absolute -right-8 -top-8 w-32 h-32 bg-pink-100 rounded-full opacity-30 group-hover:scale-125 transition-transform duration-700"></div>
+            <div class="flex justify-between items-start mb-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-pink-200">📢</div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-black text-slate-800">{{ post.username }}</span>
+                            <span class="bg-pink-600 text-white text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider shadow-sm">Official</span>
+                        </div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{{ post.date }}</p>
+                    </div>
+                </div>
+
+                {% if session['role'] == 'admin_pikr' or post.username == session['username'] %}
+                <div class="relative">
+                    <button onclick="togglePostMenu('{{ post.id }}')" class="w-8 h-8 flex items-center justify-center bg-pink-100/50 text-pink-600 rounded-xl hover:bg-pink-600 hover:text-white transition-all shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg>
+                    </button>
+                    <div id="postMenu-{{ post.id }}" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-2xl shadow-2xl border border-pink-50 z-[60] overflow-hidden animate-fade-in">
+                        <a href="{{ url_for('delete_post', post_id=post.id) }}" onclick="return confirm('Hapus pengumuman ini?')"
+                           class="block px-4 py-3 text-xs text-red-600 font-black hover:bg-red-50 transition-colors uppercase tracking-widest">
+                            🗑️ Hapus Post
+                        </a>
+                        <button onclick="showToast('Fitur edit segera hadir')" class="w-full text-left px-4 py-3 text-xs text-slate-600 font-black hover:bg-slate-50 transition-colors uppercase tracking-widest">
+                            ✏️ Edit Konten
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="text-slate-700 font-medium text-md leading-relaxed whitespace-pre-wrap relative z-10 pl-1 post-content">"{{ post.content }}"</div>
+        </div>
+
+        {% else %}
+
+        <div class="premium-card p-6 rounded-3xl relative group">
+            <div class="flex justify-between items-start mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center font-bold text-slate-500 group-hover:bg-pink-100 group-hover:text-pink-600 transition-colors uppercase">
+                        {{ post.username[0] }}
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-black text-slate-800 group-hover:text-pink-600 transition-colors">{{ post.username }}</span>
+                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">{{ post.role }}</span>
+                        </div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{{ post.date }}</p>
+                    </div>
+                </div>
+
+                {% if session['role'] == 'admin_pikr' or post.username == session['username'] %}
+                <div class="relative">
+                    <button onclick="togglePostMenu('{{ post.id }}')" class="w-8 h-8 flex items-center justify-center bg-slate-50 text-slate-400 rounded-xl hover:bg-pink-600 hover:text-white transition-all shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg>
+                    </button>
+                    <div id="postMenu-{{ post.id }}" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-2xl shadow-2xl border border-slate-50 z-[60] overflow-hidden animate-fade-in">
+                        <a href="{{ url_for('delete_post', post_id=post.id) }}" onclick="return confirm('Hapus postingan ini?')"
+                           class="block px-4 py-3 text-xs text-red-600 font-black hover:bg-red-50 transition-colors uppercase tracking-widest">
+                            🗑️ Hapus Post
+                        </a>
+                        <button onclick="showToast('Fitur edit segera hadir')" class="w-full text-left px-4 py-3 text-xs text-slate-600 font-black hover:bg-slate-50 transition-colors uppercase tracking-widest">
+                            ✏️ Edit Konten
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="text-slate-600 text-sm leading-relaxed whitespace-pre-wrap pl-1 post-content">{{ post.content }}</div>
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="premium-card p-12 rounded-3xl border-dashed text-center text-slate-400">
+            <div class="text-5xl mb-4 opacity-30">💭</div>
+            <p class="text-sm font-bold italic tracking-wide">Belum ada obrolan atau pengumuman di forum ini.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    function togglePostMenu(id) {
+        const menu = document.getElementById('postMenu-' + id);
+        // Close all other menus
+        document.querySelectorAll('[id^="postMenu-"]').forEach(m => {
+            if (m.id !== 'postMenu-' + id) m.classList.add('hidden');
+        });
+        menu.classList.toggle('hidden');
+    }
+
+    window.addEventListener('click', (e) => {
+        if (!e.target.closest('.relative')) {
+            document.querySelectorAll('[id^="postMenu-"]').forEach(m => m.classList.add('hidden'));
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const usernames = {{ valid_usernames | default([]) | tojson }};
+        // Sort by length desc so we match longer names first
+        usernames.sort((a, b) => b.length - a.length);
+
+        document.querySelectorAll('.post-content').forEach(el => {
+            let html = el.innerHTML;
+            usernames.forEach(uname => {
+                const escapedUname = uname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                // Regex: @ followed by the username, ignoring case
+                const regex = new RegExp(`@${escapedUname}(?![a-zA-Z0-9_])`, 'gi');
+                html = html.replace(regex, match => `<span class="text-pink-600 font-black bg-pink-100/50 px-1.5 py-0.5 rounded-md border border-pink-200/50 shadow-sm">${match}</span>`);
+            });
+            el.innerHTML = html;
+        });
+    });
+</script>
+{% endblock %}

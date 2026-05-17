@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIK-R Digital - Tazkia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #db2777;
+            --primary-light: #fdf2f8;
+            --secondary: #4f46e5;
+            --accent: #fbbf24;
+            --glass: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .fade-in { animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Premium Interactive Styles */
+        button:active, a:active {
+            transform: scale(0.96);
+        }
+        
+        .premium-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .premium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.12);
+            border-color: rgba(219, 39, 119, 0.3);
+        }
+
+        .glass-nav {
+            background: rgba(190, 24, 93, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #db2777 0%, #be185d 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
+        }
+
+        .btn-premium:hover {
+            box-shadow: 0 6px 20px rgba(219, 39, 119, 0.5);
+            filter: brightness(1.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #db2777; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #be185d; }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] font-sans leading-normal tracking-normal text-slate-800">
+
+    <nav class="glass-nav p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-10">
+                <a href="{{ url_for('index') }}" class="text-white font-black text-2xl tracking-tighter flex items-center gap-2">
+                    <span class="bg-white text-pink-700 w-10 h-10 flex items-center justify-center rounded-xl shadow-inner">P</span>
+                    PIK-R PORTAL
+                </a>
+
+                {# MAIN NAVIGATION LINKS (DESKTOP) #}
+                <div class="hidden xl:flex items-center space-x-1">
+                    <a href="{{ url_for('education') }}" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl text-sm font-black uppercase tracking-widest transition-all">Edukasi</a>
+                    <a href="{{ url_for('events') }}" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl text-sm font-black uppercase tracking-widest transition-all">Event</a>
+                    <a href="{{ url_for('counseling') }}" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl text-sm font-black uppercase tracking-widest transition-all">Konseling</a>
+                    <a href="{{ url_for('forum') }}" class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl text-sm font-black uppercase tracking-widest transition-all">Forum</a>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4 lg:space-x-6">
+                {% if session.get('user_id') %}
+                    <!-- NOTIFICATION BELL -->
+                    <div class="relative inline-block text-left">
+                        <button id="notifButton" class="relative text-white hover:text-pink-200 focus:outline-none flex items-center transition-transform hover:scale-110 active:scale-95">
+                            <span class="text-xl">🔔</span>
+                            <span id="notifBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full hidden shadow-sm border border-white">0</span>
+                        </button>
+                        <!-- Dropdown -->
+                        <div id="notifDropdown" class="hidden origin-top-right absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-pink-50 focus:outline-none z-50 overflow-hidden animate-fade-in">
+                            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-pink-600 text-white">
+                                <h3 class="text-sm font-black uppercase tracking-widest">Notifikasi</h3>
+                                <div class="flex space-x-2">
+                                    <button onclick="readAllNotifications()" class="text-[9px] font-black uppercase tracking-tighter bg-white/20 hover:bg-white/30 px-2 py-1 rounded-md transition-all">Baca Semua</button>
+                                    <button onclick="clearNotifications()" class="text-[9px] font-black uppercase tracking-tighter bg-white/20 hover:bg-white/30 px-2 py-1 rounded-md transition-all">Hapus</button>
+                                </div>
+                            </div>
+                            <div id="notifList" class="max-h-80 overflow-y-auto custom-scroll">
+                                <div class="p-8 text-center text-xs text-gray-400">Memuat...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-8 w-px bg-white/20 hidden lg:block"></div>
+
+                    <!-- USER PROFILE DROPDOWN -->
+                    <div class="relative inline-block text-left">
+                        <button id="userMenuBtn" class="flex items-center gap-3 text-white hover:text-pink-200 focus:outline-none transition-all group">
+                            <div class="flex flex-col items-end hidden lg:flex">
+                                <span class="text-[10px] font-black uppercase tracking-widest opacity-60">ID #{{ session['user_id'] }}</span>
+                                <span class="text-sm font-black tracking-tight">{{ session['username'] }}</span>
+                            </div>
+                            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center font-black group-hover:bg-white/30 transition-all border border-white/10 shadow-lg">
+                                {{ session['username'][0] | upper }}
+                            </div>
+                            <span class="text-[10px] opacity-50">▼</span>
+                        </button>
+                        <!-- Dropdown -->
+                        <div id="userDropdown" class="hidden origin-top-right absolute right-0 mt-3 w-56 bg-white rounded-2xl shadow-2xl border border-pink-50 focus:outline-none z-50 overflow-hidden animate-fade-in">
+                            <div class="p-5 border-b border-gray-50 bg-slate-50/50">
+                                <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Status Keanggotaan</p>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    <p class="text-xs font-black text-slate-800 uppercase tracking-tighter">{{ session['role'].replace('_', ' ') }}</p>
+                                </div>
+                            </div>
+                            <div class="py-2">
+                                <a href="{{ url_for('dashboard') }}" class="flex items-center gap-3 px-5 py-3 text-sm text-slate-600 font-bold hover:bg-pink-50 transition-colors">
+                                    <span class="text-lg">📊</span> Dashboard
+                                </a>
+                                <a href="{{ url_for('chat') }}" class="flex items-center gap-3 px-5 py-3 text-sm text-slate-600 font-bold hover:bg-pink-50 transition-colors">
+                                    <span class="text-lg">💬</span> Pesan Pribadi
+                                </a>
+                                {% if session['role'] == 'admin_pikr' %}
+                                <a href="{{ url_for('admin_users') }}" class="flex items-center gap-3 px-5 py-3 text-sm text-pink-600 font-bold hover:bg-pink-50 transition-colors">
+                                    <span class="text-lg">👥</span> Kelola Pengguna
+                                </a>
+                                {% endif %}
+                                <a href="{{ url_for('forum') }}" class="flex items-center gap-3 px-5 py-3 text-sm text-slate-600 font-bold hover:bg-pink-50 transition-colors">
+                                    <span class="text-lg">📢</span> Forum & Diskusi
+                                </a>
+                                <a href="{{ url_for('profile') }}" class="flex items-center gap-3 px-5 py-3 text-sm text-slate-600 font-bold hover:bg-pink-50 transition-colors">
+                                    <span class="text-lg">👤</span> Profil Saya
+                                </a>
+                            </div>
+                            <div class="border-t border-gray-50 py-2 bg-rose-50/10">
+                                <a href="{{ url_for('logout') }}" class="flex items-center gap-3 px-5 py-3 text-sm text-red-600 font-black hover:bg-red-50 transition-colors uppercase tracking-widest">
+                                    <span class="text-lg">🚪</span> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# MOBILE MENU TOGGLE #}
+                    <button id="mobileMenuBtn" class="xl:hidden p-2 text-white hover:bg-white/10 rounded-xl transition-all">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                
+                {% else %}
+                    <div class="space-x-4">
+                        <a href="{{ url_for('login') }}" class="text-white font-black text-sm uppercase tracking-widest hover:text-pink-200 transition-colors">Login</a>
+                        <a href="{{ url_for('register') }}" class="bg-white text-pink-700 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-pink-50 transition-all shadow-xl">Daftar</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {# MOBILE NAVIGATION (HIDDEN BY DEFAULT) #}
+        <div id="mobileMenu" class="hidden xl:hidden mt-4 p-4 bg-white/10 rounded-3xl backdrop-blur-xl border border-white/10 animate-fade-in">
+            <div class="flex flex-col space-y-2">
+                <a href="{{ url_for('education') }}" class="p-4 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 rounded-2xl transition-all">Edukasi</a>
+                <a href="{{ url_for('events') }}" class="p-4 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 rounded-2xl transition-all">Event</a>
+                <a href="{{ url_for('counseling') }}" class="p-4 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 rounded-2xl transition-all">Konseling</a>
+                <a href="{{ url_for('forum') }}" class="p-4 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 rounded-2xl transition-all">Forum Diskusi</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-4 px-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="p-4 mb-4 rounded-md fade-in {% if category == 'danger' %}bg-red-100 text-red-700{% else %}bg-green-100 text-green-700{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <main class="container mx-auto py-8 px-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-[100] flex flex-col space-y-2"></div>
+
+    <footer class="text-center py-10 text-gray-400 text-sm border-t mt-12">
+        &copy; 2025 Sistem Informasi PIK-R - Sekolah Tinggi Manajemen Informatika dan Komputer Tazkia
+    </footer>
+
+    <script>
+    {% if session.get('user_id') %}
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        let lastNotifCount = -1;
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        if (userMenuBtn) {
+            userMenuBtn.addEventListener('click', () => {
+                userDropdown.classList.toggle('hidden');
+                notifDropdown.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        if (notifButton) {
+            notifButton.addEventListener('click', () => {
+                notifDropdown.classList.toggle('hidden');
+                userDropdown.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        window.addEventListener('click', function(e) {
+            if (userMenuBtn && !userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+                userDropdown.classList.add('hidden');
+            }
+            if (notifButton && !notifButton.contains(e.target) && !notifDropdown.contains(e.target)) {
+                notifDropdown.classList.add('hidden');
+            }
+            if (mobileMenuBtn && !mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'bg-white border-l-4 border-pink-500 shadow-2xl rounded-lg p-4 mb-2 flex items-center justify-between transform transition-all duration-500 translate-x-full opacity-0 max-w-sm';
+            toast.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <div class="bg-pink-100 p-2 rounded-full text-pink-600 text-lg">🔔</div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-800">${message}</p>
+                        <p class="text-[10px] text-gray-500">Baru saja</p>
+                    </div>
+                </div>
+                <button class="ml-4 text-gray-400 hover:text-gray-600" onclick="this.parentElement.remove()">✕</button>
+            `;
+            toastContainer.appendChild(toast);
+            
+            // Trigger animation
+            setTimeout(() => {
+                toast.classList.remove('translate-x-full', 'opacity-0');
+            }, 100);
+
+            // Auto remove
+            setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+                setTimeout(() => toast.remove(), 500);
+            }, 5000);
+        }
+
+        function fetchNotifications() {
+            fetch('/api/notifications')
+                .then(res => res.json())
+                .then(data => {
+                    const unread = data.filter(n => !n.is_read);
+                    
+                    // Cek jika ada notifikasi baru untuk trigger toast
+                    if (lastNotifCount !== -1 && unread.length > lastNotifCount) {
+                        const newNotifs = unread.slice(0, unread.length - lastNotifCount);
+                        newNotifs.forEach(n => showToast(n.message));
+                    }
+                    lastNotifCount = unread.length;
+
+                    if (unread.length > 0) {
+                        notifBadge.innerText = unread.length > 9 ? '9+' : unread.length;
+                        notifBadge.classList.remove('hidden');
+                    } else {
+                        notifBadge.classList.add('hidden');
+                    }
+
+                    if (data.length === 0) {
+                        notifList.innerHTML = '<div class="p-4 text-center text-xs text-gray-400">Belum ada notifikasi baru 🎉</div>';
+                    } else {
+                        notifList.innerHTML = data.map(n => `
+                            <div class="p-3 border-b border-gray-50 hover:bg-pink-50 transition cursor-pointer ${!n.is_read ? 'bg-pink-50/40 border-l-4 border-l-pink-500' : ''}" onclick="readNotification(${n.id}, '${n.link}')">
+                                <p class="text-xs text-gray-800 ${!n.is_read ? 'font-bold' : ''}">${n.message}</p>
+                                <span class="text-[10px] text-gray-400 mt-1 block">${n.timestamp}</span>
+                            </div>
+                        `).join('');
+                    }
+                })
+                .catch(err => console.error('Error fetching notifications:', err));
+        }
+
+        function readNotification(id, link) {
+            fetch(`/api/notifications/read/${id}`, { method: 'POST' })
+                .then(() => {
+                    window.location.href = link;
+                });
+        }
+
+        function readAllNotifications() {
+            fetch('/api/notifications/read_all', { method: 'POST' })
+                .then(() => {
+                    fetchNotifications();
+                    notifDropdown.classList.add('hidden');
+                });
+        }
+
+        function clearNotifications() {
+            if (confirm('Apakah Anda yakin ingin menghapus semua notifikasi?')) {
+                fetch('/api/notifications/clear', { method: 'POST' })
+                    .then(() => {
+                        fetchNotifications();
+                        notifDropdown.classList.add('hidden');
+                    });
+            }
+        }
+
+        fetchNotifications();
+        setInterval(fetchNotifications, 5000); // Polling setiap 5 detik
+    {% endif %}
+    </script>
+</body>
+</html>
